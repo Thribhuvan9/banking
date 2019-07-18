@@ -10,7 +10,8 @@ RESTful API to transfers money between accounts.
 
 
 
-##Installation
+Installation
+------------
 ### Clone
 
 - Clone this repo to your local machine using url `https://github.com/Thribhuvan9/banking.git`
@@ -63,7 +64,8 @@ RESTful API to transfers money between accounts.
 ```
 - To stop the server press key, `CONTROL + c` or `^ + c`
 
-##Tests
+Tests
+-----
 - To run all JUnit Test, execute:
 ```
  ./gradlew test
@@ -82,7 +84,8 @@ RESTful API to transfers money between accounts.
 ```
 - All report can be found in `build/reports/jacoco/` folder
 
-##APIs
+APIs
+----
 - Attached postman json file in location `Postman_collection/BankApp.postman_collection.json` for all the API.
     ####APIs List
     - [Health check](#Health check)
@@ -371,13 +374,15 @@ curl -X GET \
 }
 ```
 
-##TechStack
+TechStack
+---------
 
 - Below are the technology stacks used.
 
 - **Application**: Java 8, Gradle, Google's Dagger, Spark Framework , Slf4J, Google GSON
 - **Tests**: JUnit, Mockito, Truth, Concurrent Unit, REST Assured
 
-##Author
+Author
+------
 * **Thribhuvan H L**  [Git](https://github.com/Thribhuvan9) [LinkedIn](https://www.linkedin.com/in/thribhuvan-lokesh/)
 

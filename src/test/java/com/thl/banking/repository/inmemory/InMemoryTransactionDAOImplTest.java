@@ -140,8 +140,8 @@ public class InMemoryTransactionDAOImplTest{
         account.setAccountId(UUID.randomUUID().toString());
         account.setBalance(balance);
         account.setCurrencyUnit("INR");
-        account.setUpdatedTime(LocalDateTime.now());
-        account.setCreatedTime(LocalDateTime.now());
+        account.setUpdatedTime(LocalDateTime.now().toString());
+        account.setCreatedTime(LocalDateTime.now().toString());
         return account;
     }
 
@@ -152,7 +152,7 @@ public class InMemoryTransactionDAOImplTest{
         transaction.setTo(to);
         transaction.setAmount(amount);
         transaction.setCurrencyUnit(currencyUnit);
-        transaction.setCreatedTime(LocalDateTime.now());
+        transaction.setCreatedTime(LocalDateTime.now().toString());
         return transaction;
     }
 }

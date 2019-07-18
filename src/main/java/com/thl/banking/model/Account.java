@@ -1,7 +1,6 @@
 package com.thl.banking.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -12,8 +11,8 @@ public class Account {
     private String accountId;
     private User user;
     private BigDecimal balance;
-    private LocalDateTime createdTime;
-    private LocalDateTime updatedTime;
+    private String createdTime;
+    private String updatedTime;
     private String currencyUnit;
 
 
@@ -21,7 +20,7 @@ public class Account {
         this.lock = new ReentrantLock();
     }
 
-    public Account(User user, BigDecimal balance, LocalDateTime createdTime, LocalDateTime updatedTime, String currencyUnit) {
+    public Account(User user, BigDecimal balance, String createdTime, String updatedTime, String currencyUnit) {
         this.lock = new ReentrantLock();
         this.user = user;
         this.balance = balance;
@@ -58,11 +57,11 @@ public class Account {
         this.balance = balance;
     }
 
-    public void setCreatedTime(LocalDateTime createdTime) {
+    public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
 
-    public void setUpdatedTime(LocalDateTime updatedTime) {
+    public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
 
@@ -74,11 +73,11 @@ public class Account {
         this.currencyUnit = currencyUnit;
     }
 
-    public LocalDateTime getCreatedTime() {
+    public String getCreatedTime() {
         return createdTime;
     }
 
-    public LocalDateTime getUpdatedTime() {
+    public String getUpdatedTime() {
         return updatedTime;
     }
 

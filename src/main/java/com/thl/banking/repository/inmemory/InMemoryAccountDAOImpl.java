@@ -46,8 +46,8 @@ public class InMemoryAccountDAOImpl implements AccountDAO {
             throw new AccountAlreadyExistsException(account.getAccountId());
         }
         Exception error = accountValidation.validate(account);
-        account.setCreatedTime(LocalDateTime.now());
-        account.setUpdatedTime(LocalDateTime.now());
+        account.setCreatedTime(LocalDateTime.now().toString());
+        account.setUpdatedTime(LocalDateTime.now().toString());
         if (error != null) {
             throw error;
         }
@@ -72,7 +72,7 @@ public class InMemoryAccountDAOImpl implements AccountDAO {
         updatedAccount.setUser(account.getUser());
         updatedAccount.setBalance(account.getBalance());
         updatedAccount.setCurrencyUnit(account.getCurrencyUnit());
-        updatedAccount.setUpdatedTime(LocalDateTime.now());
+        updatedAccount.setUpdatedTime(LocalDateTime.now().toString());
 
         return account;
     }

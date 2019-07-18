@@ -201,7 +201,7 @@ public class InMemoryAccountDAOImplTest {
         user.setId(UUID.randomUUID().toString());
         user.setAddress("");
         user.setName("TestUser");
-        Account account = new Account(user,new BigDecimal(10000),LocalDateTime.now(),LocalDateTime.now(),"INR");
+        Account account = new Account(user,new BigDecimal(10000),LocalDateTime.now().toString(),LocalDateTime.now().toString(),"INR");
         account.setAccountId(UUID.randomUUID().toString());
         return account;
     }

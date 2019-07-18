@@ -12,7 +12,7 @@ public class Transaction {
     private Account from;
     private Account to;
     private BigDecimal amount;
-    private LocalDateTime createdTime;
+    private String createdTime;
     private String currencyUnit;
     private String status;
     public Transaction() {
@@ -24,7 +24,7 @@ public class Transaction {
         this.from = from;
         this.to = to;
         this.amount = amount;
-        this.createdTime = LocalDateTime.now();
+        this.createdTime = LocalDateTime.now().toString();
         this.currencyUnit = currencyUnit;
     }
 
@@ -72,11 +72,11 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public LocalDateTime getCreatedTime() {
+    public String getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(LocalDateTime createdTime) {
+    public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
 

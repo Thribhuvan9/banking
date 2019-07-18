@@ -1,4 +1,4 @@
-package com.thl.banking.api;
+package api.testing;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -78,11 +78,6 @@ public class RESTAPITest {
                 .then().statusCode(201);
     }
 
-    @Test
-    public void GetTransactionNOTFoundTest() {
-        get("/transaction").then().body("message", equalTo("NO_TRANSACTIONS_FOUND")).statusCode(404);
-    }
-
 
     @Test
     public void accountWhenUserIsInvalidTest() {
@@ -106,7 +101,6 @@ public class RESTAPITest {
         String accountId = given().body(createAccount(user))
                 .when().post("/account")
                 .then().extract().path("accountId");
-
         delete("/account/".concat(accountId))
                 .then().statusCode(202);
     }
@@ -272,7 +266,7 @@ public class RESTAPITest {
     }
 
     private Account createAccount(User user) {
-        Account account = new Account(user, new BigDecimal(10000), LocalDateTime.now(), LocalDateTime.now(), "INR");
+        Account account = new Account(user, new BigDecimal(10000), LocalDateTime.now().toString(), LocalDateTime.now().toString(), "INR");
         account.setAccountId(UUID.randomUUID().toString());
         return account;
     }
@@ -284,7 +278,7 @@ public class RESTAPITest {
         transaction.setTo(to);
         transaction.setAmount(amount);
         transaction.setCurrencyUnit(currencyUnit);
-        transaction.setCreatedTime(LocalDateTime.now());
+        transaction.setCreatedTime(LocalDateTime.now().toString());
         return transaction;
     }
 }

@@ -39,7 +39,7 @@ public class TransactionTest {
         user.setId(UUID.randomUUID().toString());
         user.setAddress("");
         user.setName("TestUser");
-        Account account = new Account(user,new BigDecimal(10000), LocalDateTime.now(),LocalDateTime.now(),"INR");
+        Account account = new Account(user,new BigDecimal(10000), LocalDateTime.now().toString(),LocalDateTime.now().toString(),"INR");
         account.setAccountId(UUID.randomUUID().toString());
         return account;
     }
@@ -51,7 +51,7 @@ public class TransactionTest {
         transaction.setTo(to);
         transaction.setAmount(amount);
         transaction.setCurrencyUnit(currencyUnit);
-        transaction.setCreatedTime(LocalDateTime.now());
+        transaction.setCreatedTime(LocalDateTime.now().toString());
         return transaction;
     }
 

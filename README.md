@@ -3,9 +3,9 @@ RESTful API to transfers money between accounts.
 
 ## Table of Contents
 - [Installation](#installation)
-- [Running the tests](#Running the tests)
+- [Tests](#Tests)
 - [APIs](#APIs)
-- [Tech Stack Used](#Tech Stack)
+- [Tech Stack](#TechStack)
 - [Author](#Author)
 
 
@@ -63,7 +63,7 @@ RESTful API to transfers money between accounts.
 ```
 - To stop the server press key, `CONTROL + c` or `^ + c`
 
-##Running the tests
+##Tests
 - To run all JUnit Test, execute:
 ```
  ./gradlew test
@@ -371,7 +371,7 @@ curl -X GET \
 }
 ```
 
-##Tech Stack
+##TechStack
 
 - Below are the technology stacks used.
 

@@ -93,7 +93,7 @@ APIs
     - [Transactions](#Transactions)
     
     
-###Health check
+### Health check
 
 ```
 GET /healthcheck
@@ -106,7 +106,7 @@ curl -X GET \
   http://localhost:4567/healthcheck 
 ```
 
-###Accounts
+### Accounts
 
 #### Creating account
 
@@ -234,7 +234,7 @@ curl -X GET \
 }
 ```
 
-###Transactions
+### Transactions
 
 #### Committing transaction
 

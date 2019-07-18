@@ -25,6 +25,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 public class ConcurrentTransactionTest {
     private static final int NUMBER_OF_THREADS = 10;
+    private static final int NUMBER_OF_TRANSACTION = 25;
 
     private TransactionDAO transactionDAO;
     private AccountDAO accountDAO;
@@ -98,7 +99,7 @@ public class ConcurrentTransactionTest {
         accountDAO.create(sender);
         accountDAO.create(receiver);
 
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < NUMBER_OF_TRANSACTION; i++) {
             executorService.submit(() -> commitTransaction(createTransaction(sender, receiver, new BigDecimal(100), "INR")));
             executorService.submit(() -> commitTransaction(createTransaction(receiver,sender, new BigDecimal(40), "INR")));
         }

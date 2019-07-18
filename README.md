@@ -33,8 +33,6 @@ Installation
 ```
 - Note: For windows OS use `gradlew.bat` instead of `./gradlew` to run 
 
-- Note: Server will run on port `4567`. [Server Link](http://localhost:4567/healthcheck)
-
 - Once server is started will get below output in console
 ```
  [Thread-0] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@93da644{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
@@ -87,13 +85,13 @@ Tests
 APIs
 ----
 - Attached postman json file in location `Postman_collection/BankApp.postman_collection.json` for all the API.
-    ####APIs List
-    - [Health check](#Health check)
+    #### APIs List
+    - [Health check](#Healthcheck)
     - [Accounts](#Accounts)
     - [Transactions](#Transactions)
     
     
-### Health check
+### Healthcheck
 
 ```
 GET /healthcheck
@@ -133,7 +131,8 @@ curl -X POST \
 }'
 ```
 - Response: `201`:`CREATED` 
-```{
+```
+    {
        "accountId": "443e7fca-4747-42c2-933a-8e63636bceab",
        "user": {
            "id": "12435",
@@ -176,7 +175,7 @@ GET /account/{id}
 
 ```
 curl -X GET \
-  http://localhost:4567/account/03732e1a-0c5b-4818-86f7-e6adca4d0ed8
+  http://localhost:4567/account/443e7fca-4747-42c2-933a-8e63636bceab
 ```
 - Response: `200`:`OK` 
 ``` 
@@ -373,6 +372,18 @@ curl -X GET \
         ...
 }
 ```
+
+#### Todo concurrency test
+- Existing concurrency test(`ConcurrentTransactionTest`) will do 50 transaction concurrently between 2 accounts. This will take approximate 20 sec to complete.
+- If you wanna increase the load follow below steps.   
+ ```
+  Open the Project in IDE(`Eclipse` or `Intellij`), resolve all dependencies.
+  Goto ConcurrentTransactionTest.java and edit.
+  1. NUMBER_OF_THREADS
+  2. NUMBER_OF_TRANSACTION
+  3. Simultaneously edit JUnit assetion to match to the expected value.
+  4. RUN ConcurrentTransactionTest.java to see the output.
+ ```
 
 TechStack
 ---------
